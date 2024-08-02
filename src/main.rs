@@ -1,9 +1,8 @@
 use std::cmp::Ordering;
 use std::io;
 
-// We want 2 players in this guessing game.
-//  Player 1 to set the number
-//  Player 2 to guess the number
+
+// Player 2 can set the range
 
 fn main() {
     println!("Guess the number!");
@@ -14,10 +13,16 @@ fn main() {
         .read_line(&mut secret_number)
         .expect("Not a number");
 
-        let secret_number: u32 = match secret_number.trim().parse() {
-            Ok(num) => num,
-            Err(_) => panic!("Problem opening the file:"),
+        let secret_number: u32 = 
+            match secret_number.trim().parse() {
+                Ok(num) => if (0..=100).contains(&num) {
+                    num
+                } else {
+                    panic!("Not in range")
+                },
+                Err(_) => panic!("Not a number"),
         };
+
 
 
     loop {

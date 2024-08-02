@@ -1,6 +1,6 @@
 # Two-Player Guessing Game in Rust
 
-This project is a two-player guessing game implemented in Rust, inspired by the guessing game from the Rust Programming Language Book. In this version, Player 1 sets a secret number, and Player 2 attempts to guess it. The game provides feedback for each guess, indicating whether the guessed number is too small, too big, or correct.
+This project is a two-player guessing game implemented in Rust, inspired by the guessing game from the Rust Programming Language Book. In this version, Player 1 sets a secret number with, and Player 2 attempts to guess it. The number Player 1 picks has to be in the range of 0..100. The game provides feedback for each guess, indicating whether the guessed number is too small, too big, or correct.
 
 ## Features
 
